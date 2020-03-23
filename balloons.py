@@ -4,7 +4,7 @@ Created on Fri Mar 20 21:01:25 2020
 
 @author: 364970
 """
-#random "balloons" some overlaop, some don't
+
 x = [(114,136),(67,88),(14,126),(76,141),(66,78),(26,137),(85,133),(113,139),(43,141),(106,137),(60,128),(61,83),(57,102),
    (19,96),(43,99),(52,99),(41,102),(38,137),(71,108),(37,120)]
 #the range were if we threw a dart it could hit something
@@ -21,8 +21,8 @@ def find_max_pops(balloons):
                 pops.append('1')
         pops_total.append(len(pops))
     max_pops = max(pops_total)
-    print(max_pops)
-    return(pops_total.index(max_pops))
+    print(max_pops, hit_zone[pops_total.index(max_pops)])
+    return(hit_zone[pops_total.index(max_pops)])
 #function to throw the dart
 def throw(x):
     new_balloons = []
@@ -33,5 +33,3 @@ def throw(x):
 #loop to select and execute the best throw until there are no more balloons
 while len(balloons) > 0:
     balloons = throw(find_max_pops(balloons))
-
-    
