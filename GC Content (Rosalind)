@@ -1,0 +1,20 @@
+ID = {'Rosalind_6404':'CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCCTCCCACTAATAATTCTGAGG',
+      'Rosalind_5959': 'CCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGCTCCGCCGAAGGTCTATATCCATTTGTCAGCAGACACGC',
+      'Rosalind_0808':'CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT'}
+GCpercent = []
+def GCcontent(ID):
+    codepct = {}
+    for i, code in enumerate(ID.values()):
+        count = {}
+        for character in code:
+            count.setdefault(character, 0)
+            count[character] = count[character] + 1
+        GC = ((count['G'] + count['C']) / len(code))*100
+        GCpercent.append(GC)
+        codepct[list(ID.keys())[i]] = GC
+    max_codepct= max(codepct.values())
+
+    for k,v in codepct.items():
+        if v== max_codepct:
+            print(k,v)
+GCcontent(ID)
