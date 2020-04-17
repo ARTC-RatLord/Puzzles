@@ -18,3 +18,15 @@ def GCcontent(ID):
         if v== max_codepct:
             print(k,v)
 GCcontent(ID)
+
+# Change the data to dictionary
+GC='>Rosalind_8080 GCTTAAABBAG >Rosalind_8989 GCTCAAABBAG'
+GC_1=GC.replace('>','')
+GC=GC_1.split(' ')
+
+DNA_keys=list(GC[n] for n in range(0,len(GC),2))
+print(DNA_keys)
+DNA_values=list(GC[n] for n in range(1,len(GC),2))
+print(DNA_values)
+GC_dict=dict(zip(DNA_keys,DNA_values))
+print(GC_dict)
