@@ -32,7 +32,7 @@ for n in message:
         n_index=symbol.find(n)
         if mode=='encrypt':
             n_index=n_index+key
-            if n_index>26:
+            if n_index>=26:
                 n_index=n_index-26
         if mode=='decrypt':
             n_index=n_index-key
