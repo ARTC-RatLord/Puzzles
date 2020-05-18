@@ -60,6 +60,7 @@ for i in profile:
         if v==max(con.values()):
             #print(k)
             consesus+=k
+             break
 A=" ".join(A)
 C=" ".join(C)
 G=" ".join(G)
