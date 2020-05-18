@@ -5,8 +5,9 @@ Created on Sun May 17 15:37:38 2020
 @author: 502598
 """
 import re
-
-file1=open(r"C:\Users\502598\Documents\Python\rosalind_cons (12).txt")
+import os 
+os.chdir(r'C:\Users\364970\Documents\python\Rosalind')
+file1=open(r"rosalind_cons.txt")
 strings=file1.read()
 print(strings)
 #strings='''>Rosalind_1
@@ -27,8 +28,8 @@ strings=strings.replace('\n','')
 
 unit=re.compile(r'>Rosalind_\d\w+')
 DNA=unit.findall(strings)
-print(DNA)
-print(len(DNA[0]))
+#print(DNA)
+#print(len(DNA[0]))
 profile=[]
 #title='>Rosalind_1'
 #len_DNA=len(DNA[0])-len(title)
@@ -38,7 +39,7 @@ for n in range(14,len(DNA[0])):
             a.append(DNA[i][n])
         profile.append(a)
 #print(profile)
-print(len(profile))
+#print(len(profile))
 A=''
 C=''
 G=''
@@ -63,10 +64,14 @@ A=" ".join(A)
 C=" ".join(C)
 G=" ".join(G)
 T=" ".join(T)
-print(consesus)
-print('A: '+ A)
-print('C: '+ C)
-print('G: '+ G)
-print('T: '+ T)
-print(len(A))   
+#print(consesus)
+Af = 'A: '+ A
+Cf = 'C: '+ C
+Gf = 'G: '+ G
+Tf = 'T: '+ T
+
+output = [consesus, Af,Cf,Gf,Tf]
+with open('consensusLang.txt', mode = 'w') as f:
+    for i in output:
+        f.write(i + '\n')
     
